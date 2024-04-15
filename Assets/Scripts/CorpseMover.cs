@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class CorpseMover : MonoBehaviour
 {
-    [SerializeField]
-    float speed;
-
     void Update()
     {
-        Vector2 movement = Vector2.left * speed * Time.deltaTime;
+        Vector2 movement = Vector2.left * EnemyController.speed * Time.deltaTime;
         transform.Translate(movement);
         if (transform.position.x < Camera.main.orthographicSize - 25)
         {

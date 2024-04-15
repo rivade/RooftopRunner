@@ -12,16 +12,20 @@ public class MovementHandler : MonoBehaviour
 
     private Animator anim;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping && !anim.GetBool("isShielding")){
             rb.AddForce(new Vector2(0, jumpPower));
+            audioSource.Play();
         }
     }
 

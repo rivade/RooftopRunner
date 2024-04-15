@@ -24,6 +24,8 @@ public class ScoreHandler : MonoBehaviour
     void OnDisable()
     {
         PlayerPrefs.SetFloat("Score", score);
+        if (PlayerPrefs.GetFloat("Score") > PlayerPrefs.GetFloat("HighScore"))
+            PlayerPrefs.SetFloat("HighScore", score);
         PlayerPrefs.Save();
     }
 }

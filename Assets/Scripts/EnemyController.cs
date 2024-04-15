@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField]
-    float speed;
+    public static float speed = 7;
 
     [SerializeField]
     GameObject deadEnemy;
@@ -21,6 +20,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        speed += 0.001f;
         Vector2 movement = Vector2.left * speed * Time.deltaTime;
         transform.Translate(movement);
         if (transform.position.x < Camera.main.orthographicSize - 25)

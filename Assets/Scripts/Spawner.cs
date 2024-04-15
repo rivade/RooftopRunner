@@ -23,6 +23,7 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
+        
         timer += Time.deltaTime;
 
         if (timer > timeBetweenEnemies)
